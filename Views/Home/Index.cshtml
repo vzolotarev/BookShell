@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link href="/Scripts/boostrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Scripts/jquery-notifications/css/messenger.css" rel="stylesheet" type="text/css" />
+    <link href="/Scripts/jquery-notifications/css/messenger-theme-future.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="/Scripts/boostrapv3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/Scripts/underscore.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-notifications/js/messenger.min.js"></script>
+    <script type="text/javascript" src="/Scripts/validator.js"></script>
+    <script type="text/javascript" src="/Scripts/page.js"></script>
+    <script type="text/javascript" src="~/Scripts/Book/Book.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).find('#page').bookShell();  
+        });
+    </script>
+</head>
+<body>
+    <div id="page" style ="width:90%;position: absolute; left:5%;top:10px">
+        <div id="book-modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Добавить/Редактировать книгу</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        @RenderPage("~/Views/Book/Book.cshtml")     
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table id="book-table" class="table">
+            <thead>
+                <tr>
+                    <th id="Name">Название</th>
+                    <th id="Author">Автор</th>
+                    <th id="Year">Год издания</th>
+                    <th id="PageCount">Кол-во страниц</th>
+                    <th id="ISBN">ISBN</th>
+                    <th id="Actions">Операции</th>
+                </tr>
+            </thead>
+        </table>
+        <input type="button" id="btn-add-book" value="Добавить книгу"/>
+    </div>
+</body>
+</html>
+
